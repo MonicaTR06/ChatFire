@@ -1,7 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="conversations_list_title">ChatFire</string>
-    <string name="conversations_tab_status_title">Estados</string>
-    <string name="conversations_tab_chats_title">Chats</string>
-    <string name="conversations_tab_calls_title">LLamadas</string>
 </resources>

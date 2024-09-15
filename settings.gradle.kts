@@ -25,4 +25,6 @@ include(":app")
 include(":common:domain")
 include(":common:data")
 include(":common:framework")
+
 include(":feature:conversations")
+include(":feature:chat")
