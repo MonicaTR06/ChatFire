@@ -7,9 +7,11 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.chatfire.chat.ui.navigation.navigateToChat
+import com.chatfire.chat.ui.navigation.registerChatScreen
 import com.moni.chatfire.ui.theme.ChatFireTheme
-import com.moni.chatfire.navigation.HomeRoute
-import com.moni.chatfire.navigation.registerMainScreen
+import com.moni.chatfire.ui.navigation.HomeRoute
+import com.moni.chatfire.ui.navigation.registerMainScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +31,9 @@ fun ChatFireNavHost(navController: NavHostController) {
         navController = navController,
         startDestination = HomeRoute
     ) {
-        registerMainScreen()
+        registerMainScreen(onConversationClick = { chatId ->
+            navController.navigateToChat(chatId)
+        })
+        registerChatScreen(onBack = { navController.popBackStack() })
     }
 }

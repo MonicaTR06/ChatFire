@@ -65,13 +65,13 @@ fun ConversationItem(conversation: Conversation) {
             )
 
             if (conversation.unreadCount > 0) {
-                val colorBackground = MaterialTheme.colorScheme.onSurface
+                val colorBackground = MaterialTheme.colorScheme.primary
                 Spacer(modifier = Modifier.height(4.dp))
 
                 Text(
                     text = conversation.unreadCount.toString(),
                     fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.surface,
+                    color = MaterialTheme.colorScheme.onPrimary,
                     modifier = Modifier
                         .width(IntrinsicSize.Min)
                         .drawBehind {

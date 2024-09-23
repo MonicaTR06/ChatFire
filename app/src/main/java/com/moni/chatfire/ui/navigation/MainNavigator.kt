@@ -1,4 +1,4 @@
-package com.moni.chatfire.navigation
+package com.moni.chatfire.ui.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
@@ -12,11 +12,11 @@ data object HomeRoute
 
 fun NavController.navigateToMain(navOptions: NavOptions) = navigate(route = HomeRoute, navOptions)
 
-fun NavGraphBuilder.registerMainScreen(){
-    composable<HomeRoute>{
+fun NavGraphBuilder.registerMainScreen(onConversationClick: (chatId: String) -> Unit) {
+    composable<HomeRoute> {
         MainScreen(
             onNewConversationClick = {},
-            onConversationClick = {}
+            onConversationClick = onConversationClick
         )
     }
 }
