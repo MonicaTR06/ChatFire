@@ -121,6 +121,20 @@ fun demoFakeConversations(): List<Conversation> {
             message = "Did you get the tickets?",
             timestamp = "23:50",
             avatar = "https://i.pravatar.cc/150?u=11"
+        ),
+        Conversation(
+            id = "12",
+            name = "Brown",
+            message = "Hi!",
+            timestamp = "23:00",
+            avatar = "https://i.pravatar.cc/150?u=10"
+        ),
+        Conversation(
+            id = "13",
+            name = "Smith",
+            message = "Did you get the tickets?",
+            timestamp = "23:50",
+            avatar = "https://i.pravatar.cc/150?u=11"
         )
     )
 }

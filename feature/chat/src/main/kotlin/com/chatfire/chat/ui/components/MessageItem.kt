@@ -56,7 +56,7 @@ fun MessageItem(message: Message) {
                 is MessageContent.TextMessage -> {
                     Surface(
                         shape = RoundedCornerShape(8.dp),
-                        color = if (message.isMine) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSecondary
+                        color = if (message.isMine) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.secondary
                     ) {
                         Text(
                             text = content.message,
@@ -79,6 +79,7 @@ fun MessageItem(message: Message) {
             }
             Text(
                 text = message.timestamp,
+                modifier = Modifier.padding(top = 2.dp),
                 fontSize = 12.sp
             )
         }
@@ -89,11 +90,11 @@ fun MessageItem(message: Message) {
 @Composable
 fun MessageItemPreview() {
     val example = Message(
-        id = "",
-        senderName = "",
-        senderAvatar = "",
-        timestamp = "",
-        isMine = true,
+        id = "1",
+        senderName = "Yurani",
+        senderAvatar = "https://i.pravatar.cc/300?img=1",
+        timestamp =  "14:00",
+        isMine = false,
         messageContent = MessageContent.TextMessage("Hello")
     )
 

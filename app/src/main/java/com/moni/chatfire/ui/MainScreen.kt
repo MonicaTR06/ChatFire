@@ -73,9 +73,7 @@ fun MainScreen(
                     1 -> {
                         ConversationList(
                             conversations = demoFakeConversations(),
-                            onConversationClick = { chatId ->
-
-                            }
+                            onConversationClick = onConversationClick
                         )
                     }
 
