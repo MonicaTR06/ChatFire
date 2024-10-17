@@ -12,6 +12,7 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
+    enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
@@ -24,4 +25,6 @@ include(":app")
 include(":common:domain")
 include(":common:data")
 include(":common:framework")
+
 include(":feature:conversations")
+include(":feature:chat")

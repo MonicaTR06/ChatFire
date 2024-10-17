@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ChatFire</string>
+
+    <string name="home_tab_status_title">Estados</string>
+    <string name="home_tab_chats_title">Chats</string>
+    <string name="home_tab_calls_title">LLamadas</string>
 </resources>

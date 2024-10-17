@@ -3,45 +3,37 @@ package com.moni.chatfire
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
+import com.chatfire.chat.ui.navigation.navigateToChat
+import com.chatfire.chat.ui.navigation.registerChatScreen
 import com.moni.chatfire.ui.theme.ChatFireTheme
+import com.moni.chatfire.ui.navigation.HomeRoute
+import com.moni.chatfire.ui.navigation.registerMainScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             ChatFireTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                val navHostController = rememberNavController()
+                ChatFireNavHost(navHostController)
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ChatFireTheme {
-        Greeting("Android")
+fun ChatFireNavHost(navController: NavHostController) {
+    NavHost(
+        navController = navController,
+        startDestination = HomeRoute
+    ) {
+        registerMainScreen(onConversationClick = { chatId ->
+            navController.navigateToChat(chatId)
+        })
+        registerChatScreen(onBack = { navController.popBackStack() })
     }
 }
