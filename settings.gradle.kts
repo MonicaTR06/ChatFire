@@ -10,6 +10,7 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
+
 }
 dependencyResolutionManagement {
     enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
@@ -24,7 +25,9 @@ rootProject.name = "ChatFire"
 include(":app")
 include(":common:domain")
 include(":common:data")
-include(":common:framework")
+include(":common:ui")
 
 include(":feature:conversations")
 include(":feature:chat")
+include(":common:navigation")
+include(":feature:create_chat")

@@ -19,14 +19,15 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-
+import com.chatfire.framework.utils.DevicePreviews
 
 @Composable
-fun SendMessageBox(sendMessage: (String)->Unit) {
-    Box(modifier = Modifier
-        .defaultMinSize()
-        .padding(top = 0.dp, start = 16.dp, end = 16.dp, bottom = 16.dp)
-        .fillMaxWidth()
+fun SendMessageBox(sendMessage: (String) -> Unit) {
+    Box(
+        modifier = Modifier
+            .defaultMinSize()
+            .padding(top = 0.dp, start = 16.dp, end = 16.dp, bottom = 16.dp)
+            .fillMaxWidth()
     ) {
 
         var text by remember { mutableStateOf("") }
@@ -56,4 +57,10 @@ fun SendMessageBox(sendMessage: (String)->Unit) {
             )
         }
     }
+}
+
+@DevicePreviews
+@Composable
+fun SendMessageBoxPreview() {
+    SendMessageBox(sendMessage = {})
 }

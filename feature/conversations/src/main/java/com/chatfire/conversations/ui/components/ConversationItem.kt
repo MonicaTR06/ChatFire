@@ -17,10 +17,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.chatfire.conversations.ui.model.Conversation
 import com.chatfire.framework.ui.Avatar
+import com.chatfire.framework.utils.DevicePreviews
 
 @Composable
 fun ConversationItem(conversation: Conversation) {
@@ -86,7 +86,7 @@ fun ConversationItem(conversation: Conversation) {
     }
 }
 
-@Preview(showBackground = true)
+@DevicePreviews
 @Composable
 fun ConversationItemPreview() {
     ConversationItem(
