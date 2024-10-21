@@ -7,8 +7,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.chatfire.conversations.ui.model.Conversation
+import com.chatfire.framework.utils.DevicePreviews
 
 @Composable
 fun ConversationList(
@@ -20,7 +20,8 @@ fun ConversationList(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable { onConversationClick(conversation.id) }
+                    .clickable {
+                        onConversationClick(conversation.id) }
             ) {
                 ConversationItem(
                     conversation = conversation
@@ -29,13 +30,6 @@ fun ConversationList(
         }
     }
 }
-
-@Preview(showBackground = true)
-@Composable
-fun ConversationListPreview() {
-    ConversationList(demoFakeConversations()) { _ -> }
-}
-
 
 fun demoFakeConversations(): List<Conversation> {
     return listOf(
@@ -137,4 +131,10 @@ fun demoFakeConversations(): List<Conversation> {
             avatar = "https://i.pravatar.cc/150?u=11"
         )
     )
+}
+
+@DevicePreviews
+@Composable
+fun ConversationListPreview() {
+    ConversationList(demoFakeConversations()) { _ -> }
 }

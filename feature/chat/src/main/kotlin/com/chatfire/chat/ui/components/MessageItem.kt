@@ -27,6 +27,7 @@ import coil.compose.AsyncImage
 import com.chatfire.chat.ui.model.Message
 import com.chatfire.chat.ui.model.MessageContent
 import com.chatfire.framework.ui.Avatar
+import com.chatfire.framework.utils.DevicePreviews
 
 @Composable
 fun MessageItem(message: Message) {
@@ -86,7 +87,7 @@ fun MessageItem(message: Message) {
     }
 }
 
-@Preview(showBackground = true)
+@DevicePreviews
 @Composable
 fun MessageItemPreview() {
     val example = Message(
